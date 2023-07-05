@@ -88,6 +88,18 @@ At the same time, you can see four endpoints successfully imported from Github o
 
 We have completed the creation of DataAPP and now we are testing if our newly created DataAPP works appropriately.
 
+#### Add the sample data to the cluster
+
+Go to the Overview Tab on the left of the cluster page, click connect, set the password and save it somewhere secure. 
+Input the following code into the terminal to navigate to the database folder
+```bash
+cd
+cd /data-service-example
+cd /database
+```
+
+Copy the mysql command line into the terminal adding < sold_car_orders.sql at the end, which should add the table into the cluster.
+
 #### Create an ApiKey {publickey}:{privatekey} in DataAPP and save it to local.
 
 On the authentication property of the data app property page, click the Create API Key button. This will generate a {publickey}:{privatekey} pair.
@@ -115,6 +127,12 @@ Replace the fields `<PublicKey>` and `<PrivateKey>` in the copied content with t
 Next, we'll implement the web app using the full-stack framework Next.js and deploy it conveniently via Vercel within 3 minutes.
 After forked and updated the demo app repository, clone the repository to local, create a `.env` file in the root directory to specify some environment variables that shouldn't be hardcoded in the source code and can be easily changed on-the-fly
 
+```bash
+cd
+cd /data-service-example
+vi .env
+```
+Copy the following into the `.env` file, changing the parameters to the api keys and the url earlier from the api key steps and the connecting sql steps
 ```bash
 TIDBCLOUD_DATA_SERVICE_PUBLIC_KEY=YOUR PUBLIC_KEY
 TIDBCLOUD_DATA_SERVICE_PRIVATE_KEY=YOUR PRIVATE_KEY
